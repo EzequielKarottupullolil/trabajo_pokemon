@@ -14,7 +14,7 @@ public class Pokemon {
 
 	public double calcular_grositud(){
 		double barbarosidad = 0.0;
-		for (Movimiento movimiento : this.get_movimientos()) {
+		for (Movimiento movimiento : this.movimientos) {
 			barbarosidad += movimiento.get_stats();
 		}
 		return this.get_nivel()*(barbarosidad);

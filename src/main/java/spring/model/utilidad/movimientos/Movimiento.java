@@ -1,6 +1,13 @@
 package spring.model.utilidad.movimientos;
 
 public abstract class Movimiento {
+    @Override
+    public String toString() {
+        return "Movimiento{" +
+                "nombre='" + nombre + '\'' +
+                '}';
+    }
+
     protected String nombre;
     protected double stat;
     protected int cantidad_usos;

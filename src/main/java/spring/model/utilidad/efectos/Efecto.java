@@ -9,5 +9,7 @@ public abstract class Efecto {
         return this.stat;
     }
 
-    public abstract double get_stats();
+    public double get_stats(){
+        return this.stat;
+    };
 }

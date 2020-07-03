@@ -44,10 +44,8 @@ public class MainPokemon {
         mainPokemon.assertRemaster(Jigglypuff.get_nivel() == 6);
         mainPokemon.assertRemaster(Pikachu.get_nivel() == 4);
 //        mainPokemon.assertRemaster(Meganium.get_nivel() == 7);
-        System.out.println(Jigglypuff.calcular_grositud());
 
         mainPokemon.assertRemaster(Jigglypuff.calcular_grositud() == 960.0);
-
         mainPokemon.assertRemaster(Pikachu.calcular_grositud() == 1200.0);
 //        mainPokemon.assertRemaster(Meganium.calcular_grositud() == 960.0);
 

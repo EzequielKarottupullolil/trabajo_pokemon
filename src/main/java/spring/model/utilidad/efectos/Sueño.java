@@ -9,9 +9,4 @@ public class Sueño extends Efecto{
     protected void aplicar_efecto() {
 
     }
-
-    @Override
-    public double get_stats() {
-        return 0;
-    }
 }
