@@ -17,7 +17,7 @@ public class Pokemon {
 		for (Movimiento movimiento : this.get_movimientos()) {
 			barbarosidad += movimiento.get_stats();
 		}
-		return barbarosidad*get_nivel();
+		return this.get_nivel()*(barbarosidad);
 	}
 	public ArrayList<Movimiento> get_movimientos(){
 		return  this.movimientos;

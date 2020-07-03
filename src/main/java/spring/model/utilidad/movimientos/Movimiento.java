@@ -7,8 +7,7 @@ public abstract class Movimiento {
     public double get_stats() {
         return this.stat;
     }
-    public Movimiento(String nombre,double stat,int cantidad_usos){
-        this.stat = stat;
+    public Movimiento(String nombre,int cantidad_usos){
         this.nombre = nombre;
         this.cantidad_usos = cantidad_usos;
     }
