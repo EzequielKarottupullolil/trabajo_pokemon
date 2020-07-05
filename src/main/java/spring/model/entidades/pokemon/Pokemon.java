@@ -10,12 +10,10 @@ public class Pokemon {
 	protected double puntos_vida;
 	protected String nombre;
 	protected ArrayList<Movimiento> movimientos = new ArrayList<Movimiento>();
-	public double get_nivel(){
-		return Math.floor(Math.pow(this.experiencia,1.0/7));
-	}
 
-	public double calcular_grositud(){
-		double barbarosidad = 0.0;
+
+	public double get_grositud(){
+		double barbarosidad = 0;
 		for (Movimiento movimiento : this.movimientos) {
 			barbarosidad += movimiento.get_stats();
 		}
@@ -24,14 +22,9 @@ public class Pokemon {
 	public ArrayList<Movimiento> get_movimientos(){
 		return  this.movimientos;
 	}
-	public double get_puntosVida(){
-		return this.puntos_vida;
-	}
-
 	public void set_puntosVida(double cant){
 		this.puntos_vida = cant;
 	}
-
 	public void usar_movimiento(Integer indice_movimiento,Pokemon pokemon_objetivo){
 		if(this.puntos_vida <= 0) return;
 		Movimiento movimiento = this.movimientos.get(indice_movimiento);
@@ -46,12 +39,16 @@ public class Pokemon {
 		this.puntos_vida = puntos_vida;
 		this.pV_inicial = puntos_vida;
 	}
-
+	public double get_nivel(){
+		return Math.floor(Math.pow(this.experiencia,1.0/7));
+	}
 	public double get_experiencia() {
 		return this.experiencia;
 	}
-
-	public double getpV_inicial(){
+	public double get_puntosVida(){
+		return this.puntos_vida;
+	}
+	public double get_pVinicial(){
 		return this.pV_inicial;
 	}
 }

@@ -12,10 +12,7 @@ import spring.model.utilidad.movimientos.Movimiento;
 import spring.model.utilidad.movimientos.Movimiento_curativo;
 import spring.model.utilidad.movimientos.Movimiento_dañinos;
 import spring.model.utilidad.movimientos.Movimiento_especial;
-
-import java.awt.geom.PathIterator;
 import java.util.ArrayList;
-import java.util.zip.CheckedInputStream;
 
 @SuppressWarnings("ALL")
 public class MainPokemon {
@@ -29,6 +26,8 @@ public class MainPokemon {
     }
     public static void main(String[] args) throws Exception {
         MainPokemon mainPokemon = new MainPokemon();
+
+
         Ciudad ciudad = new Ciudad();
         //Jigglypuff
         Entrenador Ash = new Entrenador("Ash",ciudad);
@@ -52,7 +51,7 @@ public class MainPokemon {
         movimientos_pikachu.add(new Movimiento_dañinos("Golpazo",80,1));
         movimientos_pikachu.add(new Movimiento_curativo("Descanso",50,1));
 
-        Pokemon_salvaje Pikachu = new Pokemon_salvaje("Pikachu",80.0,42050.0,movimientos_pikachu);
+        Pokemon_salvaje Pikachu = new Pokemon_salvaje("Pikachu",80.0,42050.0,movimientos_pikachu,ciudad);
         Pikachu.set_puntosVida(60.0);
         //Pikachu end block
 //        Pokemon Meganium = new Pokemon("Meganium",1010042.0,movimientos);
@@ -61,8 +60,8 @@ public class MainPokemon {
         mainPokemon.assertRemaster(Pikachu.get_nivel() == 4);
 //        mainPokemon.assertRemaster(Meganium.get_nivel() == 7);
 
-        mainPokemon.assertRemaster(Jigglypuff.calcular_grositud() == 960.0);
-        mainPokemon.assertRemaster(Pikachu.calcular_grositud() == 1200.0);
+        mainPokemon.assertRemaster(Jigglypuff.get_grositud() == 960.0);
+        mainPokemon.assertRemaster(Pikachu.get_grositud() == 1200.0);
 //        mainPokemon.assertRemaster(Meganium.calcular_grositud() == 960.0);
 
         //Pikachu usa amago que pega 30 de hp para matar a jigglypuff con 30 hp

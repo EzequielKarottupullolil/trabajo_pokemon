@@ -13,20 +13,14 @@ public class Entrenador {
     protected ArrayList<Objeto> objetos = new ArrayList<Objeto>();
     public String nombre;
     public Entrenador(String nombre,Entorno entorno){
-        this.pokemones = pokemones;
-        this.objetos = objetos;
         this.nombre = nombre;
         this.entorno = entorno;
         this.entorno.agregar_entrenador(this);
     }
 
     public boolean puedo_capturar(Pokemon_salvaje pokemon_objetivo){
-        double mitad_vida = pokemon_objetivo.getpV_inicial() / 2;
-        if(pokemon_objetivo.get_puntosVida() > mitad_vida){
-            return false;
-        }
-
-        return true;
+        double mitad_vida = pokemon_objetivo.get_pVinicial() / 2;
+        return !(pokemon_objetivo.get_puntosVida() > mitad_vida);
     }
 
     public void capturar_pokemon(Pokemon_salvaje pokemon_objetivo){
