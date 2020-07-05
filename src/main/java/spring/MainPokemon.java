@@ -8,6 +8,7 @@ import spring.model.utilidad.movimientos.Movimiento_curativo;
 import spring.model.utilidad.movimientos.Movimiento_dañinos;
 import spring.model.utilidad.movimientos.Movimiento_especial;
 
+import java.awt.geom.PathIterator;
 import java.util.ArrayList;
 
 @SuppressWarnings("ALL")
@@ -66,8 +67,10 @@ public class MainPokemon {
 
         //Pero Pikachu no recibe el ataque debidoa que Jigglypuff tiene 0 puntos de vida
         mainPokemon.denyRemaster(Pikachu.get_puntosVida() < 60.0);
+        //Como la vida de Jigglypuff es igual o menor a 0, Pikachu obtiene experiencia
         mainPokemon.assertRemaster(Pikachu.get_experiencia() == 42530.0);
-        assert false;
+
+
     }
 }
 

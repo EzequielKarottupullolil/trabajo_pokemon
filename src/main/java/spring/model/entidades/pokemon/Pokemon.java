@@ -36,7 +36,7 @@ public class Pokemon {
 		if(this.puntos_vida <= 0) return;
 		Movimiento movimiento = this.movimientos.get(indice_movimiento);
 		movimiento.aplicar(pokemon_objetivo);
-		if(pokemon_objetivo.get_puntosVida() <= 0) this.experiencia += 520;
+		if(pokemon_objetivo.get_puntosVida() <= 0) this.experiencia += 480;
 
 	}
 	public Pokemon(String nombre,double puntos_vida,double experiencia,ArrayList<Movimiento> movimientos){
