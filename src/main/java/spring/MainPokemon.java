@@ -13,7 +13,12 @@ import java.util.ArrayList;
 @SuppressWarnings("ALL")
 public class MainPokemon {
     public void assertRemaster(Boolean assertion) throws Exception{
+        /*Se pasa el assertion por parametro
+        y si es false crea una Exception*/
         if(!assertion) throw new Exception("false assertion");
+    }
+    public void denyRemaster(Boolean deny) throws Exception{
+        if(deny) throw new Exception("false deny");
     }
     public static void main(String[] args) throws Exception {
         //Jigglypuff
@@ -25,7 +30,8 @@ public class MainPokemon {
         movimientos_Jigglypuff.add(Canto);
         movimientos_Jigglypuff.add(Descanso);
         movimientos_Jigglypuff.add(Destructor);
-        Pokemon Jigglypuff = new Pokemon("Jigglypuff",403289.0,movimientos_Jigglypuff);
+        Pokemon Jigglypuff = new Pokemon("Jigglypuff",100.0,403289.0,movimientos_Jigglypuff);
+        Jigglypuff.set_puntosVida(30);
         //end Jigglypuff
 
         //Pikachu block
@@ -36,7 +42,8 @@ public class MainPokemon {
         movimientos_pikachu.add(new Movimiento_dañinos("Golpazo",80,1));
         movimientos_pikachu.add(new Movimiento_curativo("Descanso",50,1));
 
-        Pokemon Pikachu = new Pokemon("Pikachu",42050.0,movimientos_pikachu);
+        Pokemon Pikachu = new Pokemon("Pikachu",80.0,42050.0,movimientos_pikachu);
+        Pikachu.set_puntosVida(60.0);
         //Pikachu end block
 //        Pokemon Meganium = new Pokemon("Meganium",1010042.0,movimientos);
         MainPokemon mainPokemon = new MainPokemon();
@@ -49,8 +56,18 @@ public class MainPokemon {
         mainPokemon.assertRemaster(Pikachu.calcular_grositud() == 1200.0);
 //        mainPokemon.assertRemaster(Meganium.calcular_grositud() == 960.0);
 
+        //Pikachu usa amago que pega 30 de hp para matar a jigglypuff con 30 hp
+        Pikachu.usar_movimiento(1,Jigglypuff);
 
+        mainPokemon.assertRemaster(Jigglypuff.get_puntosVida() == 0);
 
+        //Jigglypuff intenta aplicar un ataque a pikachu
+        Jigglypuff.usar_movimiento(0,Pikachu);
+
+        //Pero Pikachu no recibe el ataque debidoa que Jigglypuff tiene 0 puntos de vida
+        mainPokemon.denyRemaster(Pikachu.get_puntosVida() < 60.0);
+        mainPokemon.assertRemaster(Pikachu.get_experiencia() == 42530.0);
+        assert false;
     }
 }
 

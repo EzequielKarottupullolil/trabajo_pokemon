@@ -1,5 +1,7 @@
 package spring.model.utilidad.movimientos;
 
+import spring.model.entidades.pokemon.Pokemon;
+
 public abstract class Movimiento {
     @Override
     public String toString() {
@@ -18,4 +20,6 @@ public abstract class Movimiento {
         this.nombre = nombre;
         this.cantidad_usos = cantidad_usos;
     }
+
+    public abstract void aplicar(Pokemon pokemon_objetivo);
 }
