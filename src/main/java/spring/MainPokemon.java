@@ -1,5 +1,10 @@
 package spring;
+import spring.model.entidades.entrenador.Entrenador;
 import spring.model.entidades.pokemon.Pokemon;
+import spring.model.entidades.pokemon.Pokemon_entrenado;
+import spring.model.entidades.pokemon.Pokemon_salvaje;
+import spring.model.entorno.Entorno;
+import spring.model.entorno.ciudad.Ciudad;
 import spring.model.utilidad.efectos.Efecto;
 import spring.model.utilidad.efectos.Paralisis;
 import spring.model.utilidad.efectos.Sueño;
@@ -10,6 +15,7 @@ import spring.model.utilidad.movimientos.Movimiento_especial;
 
 import java.awt.geom.PathIterator;
 import java.util.ArrayList;
+import java.util.zip.CheckedInputStream;
 
 @SuppressWarnings("ALL")
 public class MainPokemon {
@@ -22,7 +28,10 @@ public class MainPokemon {
         if(deny) throw new Exception("false deny");
     }
     public static void main(String[] args) throws Exception {
+        MainPokemon mainPokemon = new MainPokemon();
+        Ciudad ciudad = new Ciudad();
         //Jigglypuff
+        Entrenador Ash = new Entrenador("Ash",ciudad);
         ArrayList<Movimiento> movimientos_Jigglypuff = new ArrayList<Movimiento>();
         Efecto sueño = new Sueño();
         Movimiento_especial Canto = new Movimiento_especial("Canto",2 ,sueño);
@@ -31,7 +40,7 @@ public class MainPokemon {
         movimientos_Jigglypuff.add(Canto);
         movimientos_Jigglypuff.add(Descanso);
         movimientos_Jigglypuff.add(Destructor);
-        Pokemon Jigglypuff = new Pokemon("Jigglypuff",100.0,403289.0,movimientos_Jigglypuff);
+        Pokemon_entrenado Jigglypuff = new Pokemon_entrenado("Jigglypuff",100.0,403289.0,Ash,movimientos_Jigglypuff);
         Jigglypuff.set_puntosVida(30);
         //end Jigglypuff
 
@@ -43,11 +52,10 @@ public class MainPokemon {
         movimientos_pikachu.add(new Movimiento_dañinos("Golpazo",80,1));
         movimientos_pikachu.add(new Movimiento_curativo("Descanso",50,1));
 
-        Pokemon Pikachu = new Pokemon("Pikachu",80.0,42050.0,movimientos_pikachu);
+        Pokemon_salvaje Pikachu = new Pokemon_salvaje("Pikachu",80.0,42050.0,movimientos_pikachu);
         Pikachu.set_puntosVida(60.0);
         //Pikachu end block
 //        Pokemon Meganium = new Pokemon("Meganium",1010042.0,movimientos);
-        MainPokemon mainPokemon = new MainPokemon();
 
         mainPokemon.assertRemaster(Jigglypuff.get_nivel() == 6);
         mainPokemon.assertRemaster(Pikachu.get_nivel() == 4);

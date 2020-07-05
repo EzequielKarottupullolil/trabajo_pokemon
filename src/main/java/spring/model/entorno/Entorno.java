@@ -1,6 +1,7 @@
 package spring.model.entorno;
 
 import spring.model.entidades.entrenador.Entrenador;
+import spring.model.entidades.pokemon.Pokemon;
 import spring.model.entidades.pokemon.Pokemon_salvaje;
 
 import java.util.ArrayList;
@@ -26,4 +27,11 @@ public abstract class Entorno {
 
         this.entrenadores.add(entrenador);
     };
+
+    public void agregar_pokemon_salvaje(Pokemon_salvaje pokemon_salvaje){
+        if(esta_el_pokemon(pokemon_salvaje)) return;
+
+        this.pokemonesSalvajes.add(pokemon_salvaje);
+    }
+
 }
