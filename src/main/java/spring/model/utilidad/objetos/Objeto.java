@@ -1,4 +1,7 @@
 package spring.model.utilidad.objetos;
 
-public class Objeto {
+import spring.model.entidades.pokemon.Pokemon;
+
+public abstract  class  Objeto {
+    public abstract void aplicar(Pokemon pokemon_objetivo);
 }

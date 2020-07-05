@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7b9d64-fad1-4c82-8837-8b74bd439b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/entrenador/Entrenador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon_salvaje.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Objeto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/entorno/Entorno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/MainPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/MainPokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/entrenador/Entrenador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/entrenador/Entrenador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Objeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Objeto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,22 +90,22 @@
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="510" y="269" width="437" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/62.0.1304.768@62.0.1304.768" timestamp="1593778222550" />
-    <state width="1261" height="192" key="GridCell.Tab.0.bottom" timestamp="1593961244342">
+    <state width="1261" height="192" key="GridCell.Tab.0.bottom" timestamp="1593961738276">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1593961244342" />
-    <state width="1261" height="192" key="GridCell.Tab.0.center" timestamp="1593961244342">
+    <state width="1261" height="192" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1593961738276" />
+    <state width="1261" height="192" key="GridCell.Tab.0.center" timestamp="1593961738276">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1593961244342" />
-    <state width="1261" height="192" key="GridCell.Tab.0.left" timestamp="1593961244342">
+    <state width="1261" height="192" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1593961738276" />
+    <state width="1261" height="192" key="GridCell.Tab.0.left" timestamp="1593961738276">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1593961244342" />
-    <state width="1261" height="192" key="GridCell.Tab.0.right" timestamp="1593961244342">
+    <state width="1261" height="192" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1593961738276" />
+    <state width="1261" height="192" key="GridCell.Tab.0.right" timestamp="1593961738276">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1593961244342" />
+    <state width="1261" height="192" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1593961738276" />
     <state width="1261" height="239" key="GridCell.Tab.1.bottom" timestamp="1593781789020">
       <screen x="62" y="0" width="1304" height="768" />
     </state>

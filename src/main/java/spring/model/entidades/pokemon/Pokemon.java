@@ -50,4 +50,8 @@ public class Pokemon {
 	public double get_experiencia() {
 		return this.experiencia;
 	}
+
+	public double getpV_inicial(){
+		return this.pV_inicial;
+	}
 }
