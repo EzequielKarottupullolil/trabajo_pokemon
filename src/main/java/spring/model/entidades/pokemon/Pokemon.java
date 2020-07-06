@@ -1,15 +1,31 @@
 package spring.model.entidades.pokemon;
 
+import spring.model.utilidad.efectos.Efecto;
 import spring.model.utilidad.movimientos.Movimiento;
 
 import java.util.ArrayList;
 
-public class Pokemon {
+public abstract class Pokemon {
 	protected double pV_inicial;
 	protected double experiencia;
 	protected double puntos_vida;
 	protected String nombre;
 	protected ArrayList<Movimiento> movimientos = new ArrayList<Movimiento>();
+	protected ArrayList<Efecto> efectos = new ArrayList<Efecto>();
+
+	@Override
+	public String toString() {
+		return "Pokemon{" +
+				"nombre='" + nombre + '\'' +
+				'}';
+	}
+
+	public Pokemon(String nombre, double puntos_vida, double experiencia) {
+		this.nombre = nombre;
+		this.puntos_vida = puntos_vida;
+		this.experiencia = experiencia;
+		this.pV_inicial = puntos_vida;
+	}
 
 
 	public double get_grositud(){
@@ -21,6 +37,13 @@ public class Pokemon {
 	}
 	public ArrayList<Movimiento> get_movimientos(){
 		return  this.movimientos;
+
+	}
+	public void set_efecto(Efecto efecto){
+		this.efectos.add(efecto);
+	}
+	public void vaciar_efectos(){
+		this.efectos.clear();
 	}
 	public void set_puntosVida(double cant){
 		this.puntos_vida = cant;
@@ -50,5 +73,13 @@ public class Pokemon {
 	}
 	public double get_pVinicial(){
 		return this.pV_inicial;
+	}
+
+	public String get_nombre() {
+		return this.nombre;
+	}
+
+	public ArrayList<Efecto> get_efectos(){
+		return this.efectos;
 	}
 }

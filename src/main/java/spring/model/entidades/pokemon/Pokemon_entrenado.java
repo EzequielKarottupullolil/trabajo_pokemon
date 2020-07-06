@@ -11,4 +11,16 @@ public class Pokemon_entrenado extends Pokemon{
         super(nombre, puntos_vida, experiencia, movimientos);
         this.entrenador = entrenador;
     }
+    public Pokemon_entrenado(String nombre,double puntos_vida,double experiencia){
+        super(nombre,puntos_vida,experiencia);
+    }
+
+    public Pokemon_entrenado(String nombre, double puntos_vida, double experiencia, Entrenador entrenador) {
+        super(nombre,puntos_vida,experiencia);
+        this.entrenador = entrenador;
+    }
+
+    public Entrenador get_entrenador() {
+        return this.entrenador;
+    }
 }

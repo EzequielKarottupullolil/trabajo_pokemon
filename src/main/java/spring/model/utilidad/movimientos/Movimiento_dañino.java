@@ -2,8 +2,8 @@ package spring.model.utilidad.movimientos;
 
 import spring.model.entidades.pokemon.Pokemon;
 
-public class Movimiento_dañinos extends Movimiento {
-    public Movimiento_dañinos(String nombre, double stat, int cantidad_usos){
+public class Movimiento_dañino extends Movimiento {
+    public Movimiento_dañino(String nombre, double stat, int cantidad_usos){
         super(nombre,cantidad_usos);
         this.stat = stat;
     }

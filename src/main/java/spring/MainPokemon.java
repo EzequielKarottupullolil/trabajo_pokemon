@@ -1,17 +1,17 @@
 package spring;
 import spring.model.entidades.entrenador.Entrenador;
-import spring.model.entidades.pokemon.Pokemon;
 import spring.model.entidades.pokemon.Pokemon_entrenado;
 import spring.model.entidades.pokemon.Pokemon_salvaje;
-import spring.model.entorno.Entorno;
 import spring.model.entorno.ciudad.Ciudad;
 import spring.model.utilidad.efectos.Efecto;
 import spring.model.utilidad.efectos.Paralisis;
 import spring.model.utilidad.efectos.Sueño;
 import spring.model.utilidad.movimientos.Movimiento;
 import spring.model.utilidad.movimientos.Movimiento_curativo;
-import spring.model.utilidad.movimientos.Movimiento_dañinos;
+import spring.model.utilidad.movimientos.Movimiento_dañino;
 import spring.model.utilidad.movimientos.Movimiento_especial;
+import spring.model.utilidad.objetos.Pokebola;
+
 import java.util.ArrayList;
 
 @SuppressWarnings("ALL")
@@ -35,7 +35,7 @@ public class MainPokemon {
         Efecto sueño = new Sueño();
         Movimiento_especial Canto = new Movimiento_especial("Canto",2 ,sueño);
         Movimiento_curativo Descanso = new Movimiento_curativo("Descanso",50.0,5);
-        Movimiento_dañinos Destructor = new Movimiento_dañinos("Destructor",30.0,10);
+        Movimiento_dañino Destructor = new Movimiento_dañino("Destructor",30.0,10);
         movimientos_Jigglypuff.add(Canto);
         movimientos_Jigglypuff.add(Descanso);
         movimientos_Jigglypuff.add(Destructor);
@@ -47,8 +47,8 @@ public class MainPokemon {
         ArrayList<Movimiento> movimientos_pikachu = new ArrayList<Movimiento>();
         Paralisis paralisis = new Paralisis();
         movimientos_pikachu.add(new Movimiento_especial("Impactrueno",0,paralisis));
-        movimientos_pikachu.add(new Movimiento_dañinos("Amago",30.0,10));
-        movimientos_pikachu.add(new Movimiento_dañinos("Golpazo",80,1));
+        movimientos_pikachu.add(new Movimiento_dañino("Amago",30.0,10));
+        movimientos_pikachu.add(new Movimiento_dañino("Golpazo",80,1));
         movimientos_pikachu.add(new Movimiento_curativo("Descanso",50,1));
 
         Pokemon_salvaje Pikachu = new Pokemon_salvaje("Pikachu",80.0,42050.0,movimientos_pikachu,ciudad);
@@ -77,6 +77,11 @@ public class MainPokemon {
         //Como la vida de Jigglypuff es igual o menor a 0, Pikachu obtiene experiencia
         mainPokemon.assertRemaster(Pikachu.get_experiencia() == 42530.0);
 
+        Pokebola pokebola = new Pokebola();
+
+        Ash.agregar_objeto(pokebola);
+        Ash.capturar_pokemon(Jigglypuff);
+        mainPokemon.denyRemaster(Ash.tengo_pokemon(Jigglypuff));
 
     }
 }

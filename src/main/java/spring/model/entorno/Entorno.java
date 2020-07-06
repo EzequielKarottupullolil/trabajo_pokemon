@@ -34,4 +34,12 @@ public abstract class Entorno {
         this.pokemonesSalvajes.add(pokemon_salvaje);
     }
 
+    public void quitar_pokemon_salvaje(Pokemon_salvaje pokemon_salvaje) {
+        if(!this.esta_el_pokemon(pokemon_salvaje)) return;
+        this.pokemonesSalvajes.remove(pokemon_salvaje);
+    }
+
+    public ArrayList<Pokemon_salvaje> get_pokemones_salvajes(){
+        return this.pokemonesSalvajes;
+    }
 }

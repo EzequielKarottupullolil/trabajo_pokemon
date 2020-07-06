@@ -5,7 +5,7 @@ import spring.model.utilidad.efectos.Efecto;
 
 public class Movimiento_especial extends Movimiento {
     private Efecto efecto;
-    protected double stat = 30;
+    protected double stat;
     public Movimiento_especial(String nombre,int cantidad_usos, Efecto efecto) {
         super(nombre,cantidad_usos);
         this.efecto = efecto;
@@ -22,6 +22,7 @@ public class Movimiento_especial extends Movimiento {
         this.cantidad_usos -= 1;
         double vida_total = pokemon_objetivo.get_puntosVida() - this.stat;
         pokemon_objetivo.set_puntosVida(vida_total);
+        pokemon_objetivo.set_efecto(this.efecto);
     }
 
 }
