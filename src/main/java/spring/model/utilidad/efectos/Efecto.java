@@ -5,10 +5,6 @@ public abstract class Efecto {
 
     protected abstract void aplicar_efecto();
 
-    public double get_stat(){
-        return this.stat;
-    }
-
     public double get_stats(){
         return this.stat;
     };

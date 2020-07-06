@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b7b9d64-fad1-4c82-8837-8b74bd439b42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/Objetos_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/efectos/Confusion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Medicina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Medicina_especial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Pokebola.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/movimientos_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/stats_test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/model/entorno/Combate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/MainPokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/MainPokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/entrenador/Entrenador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/entrenador/Entrenador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon_entrenado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon_entrenado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon_salvaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entidades/pokemon/Pokemon_salvaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/entorno/Entorno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/entorno/Entorno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_dañinos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_dañino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/efectos/Efecto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/efectos/Efecto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/efectos/Paralisis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/efectos/Paralisis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_curativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_curativo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_dañino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_dañino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_especial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/movimientos/Movimiento_especial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Objeto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/model/utilidad/objetos/Objeto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/movimientos_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/movimientos_test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,22 +151,22 @@
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="448" y="145" key="EnvironmentVariablesDialog/62.0.1304.768@62.0.1304.768" timestamp="1593986548870" />
-    <state width="1261" height="192" key="GridCell.Tab.0.bottom" timestamp="1594054624326">
+    <state width="1261" height="192" key="GridCell.Tab.0.bottom" timestamp="1594061814567">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1594054624326" />
-    <state width="1261" height="192" key="GridCell.Tab.0.center" timestamp="1594054624325">
+    <state width="1261" height="192" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1594061814567" />
+    <state width="1261" height="192" key="GridCell.Tab.0.center" timestamp="1594061814563">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1594054624325" />
-    <state width="1261" height="192" key="GridCell.Tab.0.left" timestamp="1594054624325">
+    <state width="1261" height="192" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1594061814563" />
+    <state width="1261" height="192" key="GridCell.Tab.0.left" timestamp="1594061814563">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1594054624325" />
-    <state width="1261" height="192" key="GridCell.Tab.0.right" timestamp="1594054624326">
+    <state width="1261" height="192" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1594061814563" />
+    <state width="1261" height="192" key="GridCell.Tab.0.right" timestamp="1594061814563">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1261" height="192" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1594054624326" />
+    <state width="1261" height="192" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1594061814563" />
     <state width="1261" height="239" key="GridCell.Tab.1.bottom" timestamp="1594052307184">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
@@ -190,6 +183,10 @@
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state width="1261" height="239" key="GridCell.Tab.1.right/62.0.1304.768@62.0.1304.768" timestamp="1594052307184" />
+    <state x="494" y="162" width="440" height="482" key="RefactorJ.WrapReturnValue" timestamp="1594056741419">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="494" y="162" width="440" height="482" key="RefactorJ.WrapReturnValue/62.0.1304.768@62.0.1304.768" timestamp="1594056741419" />
     <state x="215" y="26" key="SettingsEditor" timestamp="1593986517416">
       <screen x="62" y="0" width="1304" height="768" />
     </state>

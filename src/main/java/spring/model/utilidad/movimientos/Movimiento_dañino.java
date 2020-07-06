@@ -10,12 +10,14 @@ public class Movimiento_dañino extends Movimiento {
 
     @Override
     public double get_stats() {
-        return super.get_stats() * 2;
+        return super.get_stats();
     }
 
     @Override
     public void aplicar(Pokemon pokemon_objetivo) {
+        if(this.cantidad_usos <= 0) return;
         double vida_fila = pokemon_objetivo.get_puntosVida() - this.stat;
         pokemon_objetivo.set_puntosVida(vida_fila);
+        this.cantidad_usos -= 1;
     }
 }

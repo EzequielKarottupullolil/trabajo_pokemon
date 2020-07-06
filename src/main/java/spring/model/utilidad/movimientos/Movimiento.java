@@ -7,6 +7,7 @@ public abstract class Movimiento {
     public String toString() {
         return "Movimiento{" +
                 "nombre='" + nombre + '\'' +
+                "stat='" + stat + '\''+
                 '}';
     }
 
@@ -22,4 +23,8 @@ public abstract class Movimiento {
     }
 
     public abstract void aplicar(Pokemon pokemon_objetivo);
+
+    public int get_usos(){
+        return this.cantidad_usos;
+    }
 }

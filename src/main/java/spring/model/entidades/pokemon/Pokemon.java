@@ -2,6 +2,7 @@ package spring.model.entidades.pokemon;
 
 import spring.model.utilidad.efectos.Efecto;
 import spring.model.utilidad.movimientos.Movimiento;
+import spring.model.utilidad.movimientos.Movimiento_dañino;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,12 @@ public abstract class Pokemon {
 	public double get_grositud(){
 		double barbarosidad = 0;
 		for (Movimiento movimiento : this.movimientos) {
-			barbarosidad += movimiento.get_stats();
+			double bar_final = 0;
+			if(movimiento instanceof Movimiento_dañino) {
+				bar_final += movimiento.get_stats() * 2;
+			}
+			bar_final += movimiento.get_stats();
+			barbarosidad += bar_final;
 		}
 		return this.get_nivel()*(barbarosidad);
 	}
@@ -81,5 +87,16 @@ public abstract class Pokemon {
 
 	public ArrayList<Efecto> get_efectos(){
 		return this.efectos;
+	}
+
+	public ArrayList<Integer> pedir_sugerencia(Pokemon pokemon){
+		ArrayList<Integer> sugerencia_indices = new ArrayList<Integer>();
+		for (Movimiento movimiento : this.get_movimientos()) {
+			if(movimiento.get_usos() <= 0) continue;
+
+			if(movimiento.get_stats() == pokemon.get_puntosVida()) sugerencia_indices.add(this.get_movimientos().indexOf(movimiento));
+
+		}
+		return sugerencia_indices;
 	}
 }
