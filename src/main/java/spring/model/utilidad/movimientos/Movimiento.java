@@ -6,14 +6,15 @@ public abstract class Movimiento {
     @Override
     public String toString() {
         return "Movimiento{" +
-                "nombre='" + nombre + '\'' +
-                "stat='" + stat + '\''+
+                "nombre='" + this.nombre + '\'' +
+                "stat='" + this.stat + '\''+
                 '}';
     }
 
     protected String nombre;
     protected double stat;
     protected int cantidad_usos;
+
     public double get_stats() {
         return this.stat;
     }

@@ -66,6 +66,8 @@ public class stats_test {
         Meganium.set_puntosVida(50);
         Misty.agregar_pokemo(Meganium);
 
+
+
         if(Jigglypuff.get_nivel() != 6) throw new Error("fail");
         if(Pikachu.get_nivel() != 4) throw new Error("fail");
         if(Meganium.get_nivel() != 7) throw new Error("fail");

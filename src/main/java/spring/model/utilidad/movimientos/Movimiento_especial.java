@@ -5,11 +5,10 @@ import spring.model.utilidad.efectos.Efecto;
 
 public class Movimiento_especial extends Movimiento {
     private Efecto efecto;
-    protected double stat;
     public Movimiento_especial(String nombre,int cantidad_usos, Efecto efecto) {
         super(nombre,cantidad_usos);
         this.efecto = efecto;
-        this.stat = this.efecto.get_stats();
+        this.stat = efecto.get_effect_damage();
     }
 
     @Override

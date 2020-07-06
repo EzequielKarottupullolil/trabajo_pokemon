@@ -15,6 +15,7 @@ import spring.model.utilidad.movimientos.Movimiento_especial;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("NonAsciiCharacters")
 public class movimientos_test {
     public static void main(String[] args) {
         Ciudad ciudad_test = new Ciudad();
@@ -62,7 +63,7 @@ public class movimientos_test {
         movimientos_meganium.add(Placaje);
         Entrenador Misty = new Entrenador("Misty",ciudad_test);
         Pokemon_entrenado Meganium = new Pokemon_entrenado("Meganium",250,1010042,Misty,movimientos_meganium);
-        Meganium.set_puntosVida(50);
+        Meganium.set_puntosVida(80);
         Misty.agregar_pokemo(Meganium);
         ciudad_test.agregar_pokemon_salvaje(Pikachu);
         ciudad_test.agregar_entrenador(Ash);
@@ -99,8 +100,10 @@ public class movimientos_test {
         Jigglypuff.set_puntosVida(30);
         //Si pikachu pedir sugerencia no tiene el indice 1(amago) error
         if(!(Pikachu.pedir_sugerencia(Jigglypuff).contains(1))) throw new Error("fail") ;
-        System.out.println(Pikachu.get_movimientos());
-        System.out.println(Pikachu.pedir_sugerencia(Meganium));
+
+
+        if(!(Pikachu.pedir_sugerencia(Meganium).contains(1))) throw new Error("fail");
+        if(!(Pikachu.pedir_sugerencia(Meganium).contains(2))) throw new Error("fail");
 
 
 

@@ -35,8 +35,9 @@ public abstract class Pokemon {
 			double bar_final = 0;
 			if(movimiento instanceof Movimiento_dañino) {
 				bar_final += movimiento.get_stats() * 2;
+			}else{
+				bar_final += movimiento.get_stats();
 			}
-			bar_final += movimiento.get_stats();
 			barbarosidad += bar_final;
 		}
 		return this.get_nivel()*(barbarosidad);
@@ -93,8 +94,8 @@ public abstract class Pokemon {
 		ArrayList<Integer> sugerencia_indices = new ArrayList<Integer>();
 		for (Movimiento movimiento : this.get_movimientos()) {
 			if(movimiento.get_usos() <= 0) continue;
-
 			if(movimiento.get_stats() == pokemon.get_puntosVida()) sugerencia_indices.add(this.get_movimientos().indexOf(movimiento));
+			if(movimiento.get_stats() < pokemon.get_puntosVida()) sugerencia_indices.add(this.get_movimientos().indexOf(movimiento));
 
 		}
 		return sugerencia_indices;

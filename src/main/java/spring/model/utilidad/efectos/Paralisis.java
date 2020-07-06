@@ -1,11 +1,14 @@
 package spring.model.utilidad.efectos;
 
 public class Paralisis extends Efecto {
-    protected double stat = 30;
+
+    public Paralisis(){
+        this.effect_damage = 30;
+    }
 
     @Override
-    public double get_stats() {
-        return this.stat;
+    public double get_effect_damage() {
+        return this.effect_damage;
     }
 
     @Override
