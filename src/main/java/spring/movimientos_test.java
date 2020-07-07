@@ -1,5 +1,6 @@
 package spring;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import spring.model.entidades.entrenador.Entrenador;
 import spring.model.entidades.pokemon.Pokemon_entrenado;
 import spring.model.entidades.pokemon.Pokemon_salvaje;
@@ -33,7 +34,7 @@ public class movimientos_test {
         Movimiento_curativo Descanso = new Movimiento_curativo("Descanso",50,5);
         Movimiento_curativo Sintesis = new Movimiento_curativo("Sintesis",100,4);
         //Movimientos especiales
-        Movimiento_especial Impactrueno = new Movimiento_especial("Impactrueno",0,paralisis);
+        Movimiento_especial Impactrueno = new Movimiento_especial("Impactrueno",1,paralisis);
         Movimiento_especial Danza_petalo = new Movimiento_especial("Danza petalo ",3,confusion);
         Movimiento_especial Canto = new Movimiento_especial("Canto ",2,sueño);
 
@@ -99,13 +100,47 @@ public class movimientos_test {
         if(Jigglypuff.get_puntosVida() != 50) throw new Error("fail");
         Jigglypuff.set_puntosVida(30);
         //Si pikachu pedir sugerencia no tiene el indice 1(amago) error
-        if(!(Pikachu.pedir_sugerencia(Jigglypuff).contains(1))) throw new Error("fail") ;
+        if(!(Pikachu.es_conveniente(1,Jigglypuff))) throw new Error("fail") ;
 
 
-        if(!(Pikachu.pedir_sugerencia(Meganium).contains(1))) throw new Error("fail");
-        if(!(Pikachu.pedir_sugerencia(Meganium).contains(2))) throw new Error("fail");
+        if(!(Pikachu.es_conveniente(1,Meganium))) throw new Error("fail");
+        if(!(Pikachu.es_conveniente(2,Meganium))) throw new Error("fail");
 
+        //Como ash no tiene ningun pokemon mas groso, usar descanso es coveniente
+        if(!(Jigglypuff.es_conveniente(1,Jigglypuff))) throw new Error("fail");
+        Pokemon_entrenado pokemon_mas_groso = new Pokemon_entrenado("pokemon_mas_groso",100,1010042,Ash,movimientos_pikachu);
 
+        Ash.agregar_pokemo(pokemon_mas_groso);
+        //Como ash tiene un pokemon mas groso que Jigglypuff, usar Descanso deja de ser conveniente
+        if(Jigglypuff.es_conveniente(1,Jigglypuff)) throw new Error("fail");
+        if(!(Jigglypuff.soy_sacrificable())) throw new Error("fail");
+        Pokemon_entrenado pokemon_menos_groso = new Pokemon_entrenado("pokemon_mas_groso",100,0,Ash,movimientos_pikachu);
+        pokemon_mas_groso.set_experiencia(0);
+        Ash.agregar_pokemo(pokemon_menos_groso);
+        //Ash tiene otros dos pokemones mas, pero no son grosos a comparacion de Jigglypuff
+        if(!(Jigglypuff.es_conveniente(1,Jigglypuff))) throw new Error("fail");
 
+        pokemon_menos_groso.set_puntosVida(0);
+        //Ash tiene otros dos pokemones mas, pero no estan vivos
+        if(!(Jigglypuff.es_conveniente(1,Jigglypuff))) throw new Error("fail");
+
+        Pikachu.set_puntosVida(Pikachu.get_pVinicial());
+        //Como pikachu esta por encima de la mita de vida, descanso no es conveniente
+        if(Pikachu.es_conveniente(3,Pikachu)) throw new Error("fail");
+
+        Pikachu.set_puntosVida(30);
+        if(!(Pikachu.es_conveniente(3,Pikachu))) throw new Error("fail");
+
+        //Es conveniente usar impactrueno contra Meganium
+        if(!(Pikachu.es_conveniente(0,Meganium))) throw new Error("fail");
+        Meganium.set_efecto(paralisis);
+        //Meganiun esta bajo un efecto, y no esta normal
+        if(Meganium.estoy_normal()) throw new Error("fail");
+
+        //Usar impactrueno contra Meganium no es conveniento porque ya esta bajo un efecto
+        if(Pikachu.es_conveniente(0,Meganium)) throw new Error("fail");
+
+        //No es conveniente usar Impactrueno contra Jigglypuff
+        if(Pikachu.es_conveniente(0,Jigglypuff)) throw new Error("fail");
     }
 }

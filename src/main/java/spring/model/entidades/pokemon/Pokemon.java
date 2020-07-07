@@ -1,8 +1,11 @@
 package spring.model.entidades.pokemon;
 
+import spring.model.entidades.entrenador.Entrenador;
 import spring.model.utilidad.efectos.Efecto;
 import spring.model.utilidad.movimientos.Movimiento;
+import spring.model.utilidad.movimientos.Movimiento_curativo;
 import spring.model.utilidad.movimientos.Movimiento_dañino;
+import spring.model.utilidad.movimientos.Movimiento_especial;
 
 import java.util.ArrayList;
 
@@ -90,14 +93,30 @@ public abstract class Pokemon {
 		return this.efectos;
 	}
 
-	public ArrayList<Integer> pedir_sugerencia(Pokemon pokemon){
-		ArrayList<Integer> sugerencia_indices = new ArrayList<Integer>();
-		for (Movimiento movimiento : this.get_movimientos()) {
-			if(movimiento.get_usos() <= 0) continue;
-			if(movimiento.get_stats() == pokemon.get_puntosVida()) sugerencia_indices.add(this.get_movimientos().indexOf(movimiento));
-			if(movimiento.get_stats() < pokemon.get_puntosVida()) sugerencia_indices.add(this.get_movimientos().indexOf(movimiento));
+	public boolean es_conveniente(int indice_movimiento, Pokemon pokemon_objetivo){
+		Movimiento movimiento = this.movimientos.get(indice_movimiento);
+		double mitad_vida = pokemon_objetivo.get_pVinicial() / 2;
 
+		//Si los stats del movimiento superan la vida del pokemon mas 50 regresa false
+		if(movimiento.get_stats() > pokemon_objetivo.get_puntosVida() + 50) return false;
+		//Si el movimiento es curativo
+		if(movimiento instanceof Movimiento_curativo) {
+			//Y el pokemon tiene mas de la mita de la vida regresa false
+			if (pokemon_objetivo.get_puntosVida() > mitad_vida) return false;
 		}
-		return sugerencia_indices;
+		//Si el movimiento es especial y el pokemon objetivo es mas groso regresa false
+		if(movimiento instanceof Movimiento_especial){
+			if(pokemon_objetivo.get_grositud() < this.get_grositud()) return false;
+			if(!(pokemon_objetivo.estoy_normal())) return false;
+		}
+		return true;
+	}
+
+    public void set_experiencia(int exp) {
+		this.experiencia = exp;
+    }
+
+    public boolean estoy_normal(){
+		return this.efectos.size() < 1;
 	}
 }
